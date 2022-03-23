@@ -11,7 +11,6 @@ function App() {
   const [guns, setGuns] = useState([]);
   const [cart, setCart] = useState([]);
   const [modal, setModal] = useState(false);
-  console.log(guns);
 
   const customStyles = {
     content: {
@@ -64,7 +63,13 @@ function App() {
           </div>
         )}
         {cart.map((item) => (
-          <h1>Name: {item.name}</h1>
+          <div className="modal-cart">
+            <img src={item.img} alt="cart" />
+            <div className="modal-info">
+              <h3>{item.name}</h3>
+              <p>Price: ${item.price}</p>
+            </div>
+          </div>
         ))}
       </Modal>
     </div>
